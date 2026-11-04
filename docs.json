@@ -1,0 +1,169 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "bleed",
+  "colors": {
+    "primary": "#658a95",
+    "light": "#95b6bd",
+    "dark": "#658a95"
+  },
+  "favicon": "favicon.png",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Overview",
+        "pages": [
+          "overview/introduction",
+          "overview/donator-perks",
+          "overview/customization",
+          "overview/changelog"
+        ]
+      },
+      {
+        "group": "Security Setup",
+        "pages": [
+          "security/antinuke",
+          "security/antiraid",
+          "security/filters",
+          "security/moderation",
+          "security/fake-permissions"
+        ]
+      },
+      {
+        "group": "Server Configuration",
+        "pages": [
+          {
+            "group": "Tickets",
+            "icon": "tickets",
+            "pages": [
+              "configuration/tickets/overview",
+              "configuration/tickets/commands",
+              "configuration/tickets/panels",
+              "configuration/tickets/options",
+              "configuration/tickets/forms",
+              "configuration/tickets/access",
+              "configuration/tickets/lifecycle",
+              "configuration/tickets/messages",
+              "configuration/tickets/variables"
+            ]
+          },
+          {
+            "group": "Roles",
+            "icon": "users-gear",
+            "pages": [
+              "configuration/roles/vanity",
+              "configuration/roles/booster",
+              "configuration/roles/reaction",
+              "configuration/roles/button"
+            ]
+          },
+          {
+            "group": "Messages",
+            "icon": "message",
+            "pages": [
+              "configuration/messages/system",
+              "configuration/messages/responder",
+              "configuration/messages/timer"
+            ]
+          },
+          "configuration/starboard",
+          "configuration/voicemaster",
+          "configuration/level-rewards",
+          "configuration/bump-reminder",
+          "configuration/reaction-triggers",
+          "configuration/command-aliases",
+          "configuration/logging"
+        ]
+      },
+      {
+        "group": "Miscellaneous",
+        "pages": [
+          "miscellaneous/music",
+          "miscellaneous/webhook",
+          "miscellaneous/giveaway",
+          "miscellaneous/counters"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "integrations/spotify",
+          "integrations/lastfm",
+          "integrations/fortnite",
+          "integrations/social-notifications"
+        ]
+      },
+      {
+        "group": "Resources",
+        "pages": [
+          "resources/syntax",
+          {
+            "group": "Scripting",
+            "icon": "scroll",
+            "pages": [
+              "resources/scripting/components",
+              "resources/scripting/embeds",
+              "resources/scripting/variables",
+              "resources/scripting/pagination"
+            ]
+          },
+          "resources/permissions",
+          "resources/events",
+          "resources/voices"
+        ]
+      },
+      {
+        "group": "Common Issues",
+        "pages": ["common-issues/permissions", "common-issues/server-removal"]
+      }
+    ]
+  },
+  "logo": {
+    "light": "https://bleed.bot/bleed.png",
+    "dark": "https://bleed.bot/bleed.png"
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Main Server",
+        "href": "https://discord.gg/nordicalls"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Home",
+      "href": "https://hvurs.cc"
+    }
+  },
+  "seo": {
+    "metatags": {
+      "theme-color": "#658a95",
+      "og:site_name": "hvurs.cc"
+    },
+    "indexing": "navigable"
+  },
+  "footer": {
+    "socials": {
+      "discord": "https://discord.gg/nordicalls",
+      "github": "https://github.com/hvurs"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/status",
+      "destination": "https://csr.hvurs.cc"
+    },
+    {
+      "source": "/invite",
+      "destination": "https://hvurs.cc/caesar"
+    },
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/nordicalls"
+    }
+  ]
+}
