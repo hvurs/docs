@@ -1,0 +1,59 @@
+---
+title: Economy Chances
+description: "Published base probabilities for selected Caesar economy activities."
+icon: chart-simple
+---
+
+These are the configured base probabilities. Items and perks can change some outcomes; the command response or `/item` can show item-specific details.
+
+## Crime success
+
+| Crime | Base success |
+| --- | ---: |
+| Shoplifting | 70% |
+| Pickpocketing | 60% |
+| Fake tickets | 55% |
+| Tax fraud | 50% |
+| Smuggling | 45% |
+| Car theft | 40% |
+| Jewellery store | 35% |
+| Bank robbery | 25% |
+
+Fenrir's Fang and active Mead each add 10 percentage points to success, up to a 95% cap. A failed smuggling, car theft, jewellery store, or bank robbery can also be fatal; the conditional death chance is 14%, 17%, 20%, or 30%, respectively. Those death rolls happen only after the crime fails.
+
+## Expedition outcomes
+
+Each successful expedition makes the listed number of item rolls. The per-roll chance is independent of which item is selected from that tier's loot table.
+
+| Expedition | Disaster chance | Item chance per roll | Rolls | Base chance of at least one item |
+| --- | ---: | ---: | ---: | ---: |
+| Coastal Raid | 15% | 40% | 1 | 34% |
+| Longship Voyage | 20% | 60% | 2 | 67.2% |
+| Saga to Distant Lands | 25% | 80% | 3 | 74.4% |
+
+The final column is calculated as `(1 - disaster chance) x (1 - (1 - item chance)^rolls)`. Mjolnir halves the disaster chance, and Dragon Figurehead adds an item roll, so a member's actual odds may differ.
+
+## Work item drops
+
+The chance of receiving any job item on a shift varies by job:
+
+| Job | Chance per shift |
+| --- | ---: |
+| Dishwasher | 5% |
+| Cashier | 5% |
+| Delivery Driver | 6% |
+| Fisherman | 30% |
+| Mechanic | 5% |
+| Software Developer | 3% |
+| Bank Manager | 4% |
+| CEO | 4% |
+
+## Other risks
+
+| Activity | Base risk |
+| --- | ---: |
+| Fishing | 2% death chance per cast; after surviving, a 2% fishing-pole break roll |
+| Digging | 2% death chance per dig |
+| Hunting | 2.5% death chance; if you survive, a 4% injury roll |
+
+Some items prevent or modify these outcomes. For example, a Halibut prevents fishing-pole breaks, a Bear Pelt prevents hunting injuries, and a Camo Cloak prevents hunting accidents. These figures are base values and may change with active perks.

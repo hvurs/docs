@@ -1,119 +1,53 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "nordicalls",
+  "name": "Caesar",
   "colors": {
-    "primary": "#658a95",
-    "light": "#95b6bd",
-    "dark": "#658a95"
+    "primary": "#315F9A",
+    "light": "#6F9FD8",
+    "dark": "#15335B"
   },
   "favicon": "favicon.png",
   "navigation": {
     "groups": [
       {
         "group": "Overview",
-        "pages": [
-          "overview/introduction",
-          "overview/donator-perks",
-          "overview/customization",
-          "overview/changelog"
-        ]
+        "pages": ["overview/introduction"]
       },
       {
-        "group": "Security Setup",
+        "group": "Security and Moderation",
         "pages": [
           "security/antinuke",
           "security/antiraid",
-          "security/filters",
-          "security/moderation",
-          "security/fake-permissions"
+          "security/moderation"
         ]
       },
       {
-        "group": "Server Configuration",
+        "group": "Server Features",
         "pages": [
-          {
-            "group": "Tickets",
-            "icon": "tickets",
-            "pages": [
-              "configuration/tickets/overview",
-              "configuration/tickets/commands",
-              "configuration/tickets/panels",
-              "configuration/tickets/options",
-              "configuration/tickets/forms",
-              "configuration/tickets/access",
-              "configuration/tickets/lifecycle",
-              "configuration/tickets/messages",
-              "configuration/tickets/variables"
-            ]
-          },
-          {
-            "group": "Roles",
-            "icon": "users-gear",
-            "pages": [
-              "configuration/roles/vanity",
-              "configuration/roles/booster",
-              "configuration/roles/reaction",
-              "configuration/roles/button"
-            ]
-          },
-          {
-            "group": "Messages",
-            "icon": "message",
-            "pages": [
-              "configuration/messages/system",
-              "configuration/messages/responder",
-              "configuration/messages/timer"
-            ]
-          },
-          "configuration/starboard",
-          "configuration/voicemaster",
+          "configuration/admin",
+          "configuration/roles/reaction",
+          "configuration/messages/responder",
+          "configuration/tickets/overview",
           "configuration/level-rewards",
-          "configuration/bump-reminder",
-          "configuration/reaction-triggers",
-          "configuration/command-aliases",
-          "configuration/logging"
+          "miscellaneous/giveaway"
         ]
       },
       {
-        "group": "Miscellaneous",
+        "group": "Economy and Community",
         "pages": [
-          "miscellaneous/music",
-          "miscellaneous/webhook",
-          "miscellaneous/giveaway",
-          "miscellaneous/counters"
-        ]
-      },
-      {
-        "group": "Integrations",
-        "pages": [
-          "integrations/spotify",
-          "integrations/lastfm",
-          "integrations/fortnite",
-          "integrations/social-notifications"
+          "economy/overview",
+          "economy/chances",
+          "community/invites",
+          "community/leaderboard"
         ]
       },
       {
         "group": "Resources",
-        "pages": [
-          "resources/syntax",
-          {
-            "group": "Scripting",
-            "icon": "scroll",
-            "pages": [
-              "resources/scripting/components",
-              "resources/scripting/embeds",
-              "resources/scripting/variables",
-              "resources/scripting/pagination"
-            ]
-          },
-          "resources/permissions",
-          "resources/events",
-          "resources/voices"
-        ]
+        "pages": ["resources/syntax", "resources/permissions"]
       },
       {
-        "group": "Common Issues",
+        "group": "Troubleshooting",
         "pages": ["common-issues/permissions", "common-issues/server-removal"]
       }
     ]
@@ -127,40 +61,30 @@
     "strict": true
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Main Server",
-        "href": "https://discord.gg/nordicalls"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Home",
-      "href": "https://hvurs.cc"
+      "label": "Caesar Community",
+      "href": "https://discord.gg/nordicalls"
     }
   },
   "seo": {
     "metatags": {
-      "theme-color": "#658a95",
-      "og:site_name": "hvurs.cc"
+      "theme-color": "#15335B",
+      "og:site_name": "Caesar",
+      "og:type": "website",
+      "og:image": "https://nordicalls-ed759818.mintlify.app/images/caesar-og.png",
+      "twitter:card": "summary_large_image",
+      "twitter:image": "https://nordicalls-ed759818.mintlify.app/images/caesar-og.png"
     },
     "indexing": "navigable"
   },
   "footer": {
     "socials": {
       "discord": "https://discord.gg/nordicalls",
-      "github": "https://github.com/hvurs"
+      "github": "https://github.com/hvurs/nordicalls"
     }
   },
   "redirects": [
-    {
-      "source": "/status",
-      "destination": "https://csr.hvurs.cc"
-    },
-    {
-      "source": "/invite",
-      "destination": "https://hvurs.cc/caesar"
-    },
     {
       "source": "/discord",
       "destination": "https://discord.gg/nordicalls"

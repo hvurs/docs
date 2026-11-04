@@ -1,46 +1,11 @@
 ---
-title: Syntax
-description: "General explanation of the syntax used for commands."
+title: Slash Commands
+description: "Use Caesar commands through Discord's slash-command interface."
 icon: code
 ---
 
-## Formatting a duration
+Caesar's commands use Discord's slash-command interface. Type `/`, select Caesar, and then choose a command and its options. Discord shows each option's expected type and whether it is required.
 
-When a command requires a `duration:` parameter, you format it as a number followed by a unit. The unit can be one of the following:
+Some commands use durations. Common examples include `30m` for 30 minutes, `2h` for two hours, and `1d12h` for one day and twelve hours. Use the format shown in the command's description.
 
-- `s` for seconds.
-- `m` for minutes.
-- `h` for hours.
-- `d` for days.
-- `w` for weeks.
-
-For example, `1d` represents one day, and `1w` represents one week. You can also combine units, for example, `1w2d` represents one week and two days.
-
-<CodeGroup>
-
-    ```javascript Correct
-    /timeout add member:@member duration:1w
-    /timeout add member:@member duration:2d3h
-    ```
-    ```javascript Incorrect
-    /timeout add member:@member duration:1 hour
-    /timeout add member:@member duration:2 days 3 hours
-    ```
-
-</CodeGroup>
-
-## Punishments
-
-When a command has a `punishment:` parameter, you can use it to specify the action to take. The available actions are:
-
-- `warn` to warn the user.
-- `jail` to jail the user.
-- `kick` to kick the member from the server.
-- `ban` to ban the member from the server.
-- `delete` to delete the message if applicable.
-- `stripstaff` to remove the staff role from the member.
-  - This is only available for **antinuke** commands.
-  - This will only work for roles set via the `/settings staff set` command.
-  - You can find more information about setting staff roles in the [moderation](/security/moderation#setting-staff-roles) section.
-
-For example, to warn a user, you would use `punishment:warn`.
+If a command or panel section does not appear, see [Command access](/resources/permissions).

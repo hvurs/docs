@@ -1,54 +1,15 @@
 ---
-title: Permissions
-description: "How to solve channel permission issues."
+title: Permission Issues
+description: "Troubleshoot missing commands and failed actions."
 icon: lock
 ---
 
-## Text Channel Permissions
+If a Caesar command is missing or an action fails:
 
-Usually, if members are still able to send messages in a text channel after being muted, it is likely because of the `@everyone` channel permissions being set incorrectly.
-<Steps>
-    <Step title="Set the channel permissions">
-        Go to your channel settings, and navigate to the **Permissions** tab.
-        Find the `@everyone` or **member** role and ensure that the **Send Messages** permission is set to **Neutral** (`/`).
-        <Frame>
-        <img
-            src="/images/common-issues/channel-permission.png"
-            className="w-auto"
-        />
-        </Frame>
-    </Step>
-    <Step title="Check server-wide role permissions">
-        Go to your server settings, and navigate to the **Roles** tab.
-        Find the `@everyone` or **member** role and ensure that the **Send Messages** permission isn't enabled.
-        <Frame>
-        <img
-            src="/images/common-issues/server-role-permission.png"
-            className="w-auto"
-        />
-        </Frame>
-    </Step>
-    <Step title="Check for role overrides">
-        Check if there are any roles that have permission overrides for the channel in question. If a role has the **Send Messages** permission enabled, it will override the `@everyone` permissions and allow members to send messages.
-    </Step>
-</Steps>
+1. Type `/` and confirm you selected Caesar's command rather than a similarly named command from another app.
+2. Check whether the command is staff-only. Ask an administrator to review your Caesar access.
+3. Check Caesar's Discord permissions in the channel where you ran the command.
+4. For role assignment, ensure Caesar has **Manage Roles** and its highest role is above the role it must assign.
+5. For moderation actions, verify that Caesar's role is above the target member's roles and that the required Discord permission is granted.
 
-### Lockdown Command
-
-If you have a custom member role instead of the default `@everyone` role, make sure that the lockdown command is set to restrict that role instead of the `@everyone` role.
-<Tip>The steps above are also required for the lockdown command to work properly.</Tip>
-<CodeGroup>
-
-```javascript Syntax
-/lockdown role role:<role>
-```
-
-```javascript Example
-/lockdown role role:@Member
-```
-
-</CodeGroup>
-
-## Voice Channel Permissions
-
-If your VoiceMaster channels aren't working as expected due to permission issues, you can use the **category** to manage permissions for all channels within it.
+If access still fails, share the command name and the exact error with server staff.
