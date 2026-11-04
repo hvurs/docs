@@ -27,6 +27,7 @@
         "pages": [
           "configuration/admin",
           "configuration/roles/reaction",
+          "configuration/roles/custom",
           "configuration/messages/responder",
           "configuration/tickets/overview",
           "configuration/level-rewards",
@@ -37,14 +38,24 @@
         "group": "Economy and Community",
         "pages": [
           "economy/overview",
+          "economy/earning",
+          "economy/activities",
+          "economy/items",
+          "economy/organisations",
+          "economy/games",
           "economy/chances",
           "community/invites",
+          "community/verification",
           "community/leaderboard"
         ]
       },
       {
+        "group": "Nordicalls Dashboard",
+        "pages": ["dashboard/overview"]
+      },
+      {
         "group": "Resources",
-        "pages": ["resources/syntax", "resources/permissions"]
+        "pages": ["resources/syntax", "resources/permissions", "resources/tts"]
       },
       {
         "group": "Troubleshooting",
@@ -63,18 +74,18 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Caesar Community",
+      "label": "Nordicalls",
       "href": "https://discord.gg/nordicalls"
     }
   },
   "seo": {
     "metatags": {
       "theme-color": "#15335B",
-      "og:site_name": "Caesar",
+      "og:site_name": "Nordicalls",
       "og:type": "website",
-      "og:image": "https://nordicalls-ed759818.mintlify.app/images/caesar-og.png",
+      "og:image": "https://docs.hvurs.cc/images/caesar-og.png?v=2",
       "twitter:card": "summary_large_image",
-      "twitter:image": "https://nordicalls-ed759818.mintlify.app/images/caesar-og.png"
+      "twitter:image": "https://docs.hvurs.cc/images/caesar-og.png?v=2"
     },
     "indexing": "navigable"
   },

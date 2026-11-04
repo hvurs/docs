@@ -1,0 +1,61 @@
+---
+title: Organisations
+description: "Create an organisation, manage its shared vault, and play together."
+icon: users
+---
+
+Organisations let members share a vault, transfer money and items without tax after a trust period, run a crew heist, and raid other organisations. Creating one costs coins; the current price is shown in Discord before it is charged. Membership capacity is limited and can be expanded with a Longhouse Extension.
+
+## Commands
+
+### `/org`
+
+View your organisation, or look up one by name or member. The panel shows its owner, members, vault, raid and heist record, cooldowns, and your withdrawal allowance.
+
+### `/org create`
+
+Create an organisation with a name. The current creation cost is shown in `/org` instructions. You can only belong to one organisation at a time.
+
+### `/org invite`
+
+Invite a member to your organisation. Only the owner can invite, and the target cannot already belong to another organisation. They must accept the invitation.
+
+### `/org leave`
+
+Leave your current organisation. An owner should transfer ownership first if they want the organisation to remain under another member's control.
+
+### `/org kick`
+
+Remove a member. Only the owner can do this.
+
+### `/org transfer`
+
+Hand ownership to another member of the organisation.
+
+### `/org disband`
+
+Delete the organisation. The command asks you to confirm; the vault is split between its members.
+
+### `/org deposit`
+
+Put money from your wallet into the shared vault.
+
+### `/org withdraw`
+
+Withdraw from the shared vault if you are eligible. New members have a trust period before withdrawals and tax-free transfers are enabled. A daily withdrawal limit applies.
+
+### `/org heist`
+
+Join a crew to rob the Jarl's Treasury. The proceeds go into your organisation's vault.
+
+### `/org raid`
+
+Attack another organisation's vault. Its members may defend it; raid cooldowns and protection apply.
+
+### `/org top`
+
+See the organisations with the largest vaults.
+
+## Ownership and access
+
+Creating an organisation makes you its owner. Only the owner can invite or kick members, transfer ownership, or disband the organisation. All members can view the organisation, deposit money, and participate in its group activities. The command tells you when a cooldown, trust-period, capacity, or withdrawal limit prevents an action.

@@ -1,0 +1,26 @@
+---
+title: Roblox Verification
+description: "Link your Roblox account with Bloxlink and sync your server roles."
+icon: badge-check
+---
+
+Caesar uses Bloxlink to link your Discord and Roblox accounts.
+
+## Link your account
+
+1. Run `/verify` in the server.
+2. Select **Link Account** to open Bloxlink and link the Roblox account to the Discord account you use in this server.
+3. Return to Discord and select **Update Myself** in the verification panel, or run `/update`.
+
+Caesar checks Bloxlink, saves the link, then updates your server nickname and verification roles based on your Roblox group membership. The `/verify` reply is visible only to you.
+
+## Refresh later
+
+Run `/update` whenever your Roblox group membership changes and you want to synchronize again. Your own update requires the configured `update` permission. Updating another member requires the separate `update_user` permission; staff can use `/update user:<member>`.
+
+## Troubleshooting
+
+- **Not linked:** complete the Bloxlink link flow first, then run `/update` again.
+- **Account linked to another Discord user:** sign into Bloxlink with the Discord account you intend to verify. If the Roblox account was linked incorrectly, ask a server staff member for help.
+- **Roles did not change:** make sure the bot's highest role is above the verification roles and the target member. A nickname update can fail due to role hierarchy even when role synchronization succeeds.
+- **Update failed:** try again shortly. If the problem continues, contact a server administrator.

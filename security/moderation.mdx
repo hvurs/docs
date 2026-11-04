@@ -1,13 +1,144 @@
 ---
-title: Moderation
-description: "Find and use the moderation commands available in Caesar."
+title: Moderation Commands
+description: "Use Caesar's moderation commands and understand their access requirements."
 icon: hammer
 ---
 
-Caesar's moderation tools are slash commands. Type `/` in Discord and select Caesar, or run `/help`, to see the actions available to your account.
+Caesar's moderation tools are slash commands. Type `/` in Discord and select Caesar to see the commands and options available to your account. Access is controlled by configured staff permissions; Discord administrators bypass Caesar's role gates. Some actions also require native Discord permissions and the bot's role must be high enough to act on the target.
 
-Access to moderation commands depends on the server's staff permissions. Discord also checks the bot's permissions and role position when an action requires them.
+## Sanctions
 
-Before taking action, confirm the selected member and review the command's options. Commands that offer a reason should include enough context for other staff to understand the decision.
+### `/sanction warn`
 
-For destructive server actions, see the [security panel](/security/antinuke). For automated join protection, see [Anti-Raid](/security/antiraid).
+Record a warning for a member. Include a reason; the case is added to their history.
+
+### `/sanction timeout`
+
+Apply a Discord timeout with a reason and optional duration. Durations use formats such as `30m`, `2h`, `1d12h`, or `2w`; Discord limits timeouts to 28 days.
+
+### `/sanction suspend`
+
+Suspend a member, remove their roles, and record a case. Use an optional duration; `perm` creates a permanent suspension. This action is more restricted than a warning or timeout.
+
+### `/sanction history`
+
+Review a member's moderation record and the status of each case.
+
+### `/sanction view`
+
+Look up a case by its case ID.
+
+### `/sanction duration`
+
+Change the duration of an active timeout or suspension.
+
+### `/sanction revoke`
+
+End an active timeout or suspension early using its case ID. Add a reason when appropriate.
+
+| Action | Required Caesar access |
+| --- | --- |
+| Warn, timeout, history, view | `sanction` permission |
+| Suspend, change duration, revoke | `sanctionSuspend` permission |
+
+## Active cases and evidence
+
+### `/active`
+
+Choose **all**, **suspended**, or **timeouts** to list members who currently have an active suspension or timeout. Requires the `sanction` permission.
+
+### `/evidence upload`
+
+Attach evidence to a case. Add the evidence files to the command before submitting. Requires `sanction`.
+
+### `/evidence delete`
+
+Remove evidence from a case. Requires `sanctionSuspend`.
+
+## Member records and flags
+
+### `/note`
+
+Use `add`, `view`, or `remove` to manage private staff notes on a member. Requires `sanction`.
+
+### `/flag`
+
+Use `add` to flag a user, `remove` to clear the flag, or `list` to review flagged users. A flagged user may be automatically suspended if they join.
+
+| `/flag` action | Required Caesar access |
+| --- | --- |
+| Add or remove | `flag_manage` |
+| List | `flag_list` |
+
+## Messages and channel tools
+
+### `/purge`
+
+Delete recent messages in the current channel by count or filter, such as author, text, bot messages, or links. Discord's bulk-delete API cannot delete messages older than 14 days. Requires `purge`; the bot also needs **Manage Messages**.
+
+### `/nick`
+
+Change a member's server nickname. Requires Discord **Manage Nicknames**. The bot must be able to manage the target member.
+
+### `/role`
+
+Add or remove a role from a member, or use the `has add`/`has remove` actions to update everyone who has another role. Requires the configured `role` permission. The bot needs **Manage Roles** and cannot assign roles at or above its highest role.
+
+### `/mp`
+
+Use `blacklist` or `unblacklist` to control a member's access to marketplace listings. Requires the configured marketplace-manager permission.
+
+### `/snipe` and `/cs`
+
+`/snipe` shows the most recently deleted message the bot retained for the channel. `/cs` clears that stored message. Both require `snipe`.
+
+### `/sticky`
+
+Post a message that Caesar reposts at the bottom of the channel as new messages arrive. Use its remove option to stop. Requires the configured `sticky` permission or **Manage Server** when no custom roles are configured. The bot needs permission to send and delete messages.
+
+### `/protect`
+
+Toggle whether a channel is included in message edit, delete, and ping logs. Requires `protect`.
+
+### `/transfer`
+
+Copy recent messages or pinned messages from one channel or thread to another. Requires Discord **Manage Messages**; the bot needs access to both locations and permission to manage webhooks.
+
+## Staff activity
+
+### `/quota`
+
+View your own activity quota. Staff options can review other members, open the management panel, inspect history and strikes, preview the weekly rollover, manage excuses and discharge flags, or change settings. Each staff action uses its matching configured quota permission; weekly reset and rollover require **Administrator**.
+
+| `/quota` action | Required Caesar access |
+| --- | --- |
+| View another member, `all`, panel, strikes, history, preview | `quota_view_others` |
+| `strike`, `unstrike` | `quota_strike` |
+| `excuse`, `unexcuse` | `quota_excuse` |
+| `discharge` | `quota_discharge` |
+| `settings` | `quota_settings` |
+| `reset`, `rollover` | Discord **Administrator** |
+
+### `/loa`
+
+Manage staff leave-of-absence entries. Members can view their own record. Viewing someone else's record, listing active LOAs, adding an LOA, and removing one each require their corresponding `loa_view_others`, `loa_list`, `loa_append`, or `loa_remove` permission.
+
+## Configuration and cleanup
+
+### AutoMod whitelist in `/admin`
+
+From `/admin`, open **AutoMod Whitelist** and choose `list`, `add`, or `remove` to manage rule, keyword, and channel exemptions from punishments. Discord **Manage Server** is required.
+
+### `/clearhistory`
+
+Permanently remove moderation history for a member, a single case, or the whole server. This requires Discord **Administrator**. Confirm carefully: deleted history cannot be restored.
+
+### `/honeypot`
+
+Use `/honeypot action:setup` to create a channel automatically, or include `channel:<#channel>` (or a channel ID) to select an existing regular text channel. Use `status` to check the active channel and `disable` to turn off automatic handling. Requires the `honeypot` permission. Non-staff who post in the channel are suspended and recent cached messages are removed; staff can post without being punished. The bot needs permission to create channels when making one, manage roles to suspend members, and manage messages to remove posts.
+
+### `/admin` — autoresponders
+
+Open the Admin panel and select **Autoresponders** to create, edit, enable, disable, or delete automated replies. Access requires the configured `autoresponder` permission; when no custom role is configured, **Manage Server** is used.
+
+If a command or option is missing, ask a server administrator to review your Caesar permissions. Do not rely on role names alone: access is granted to specific configured roles or Discord permissions, and the bot must also have the permissions needed to carry out the action.
