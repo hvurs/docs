@@ -2,20 +2,28 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Caesar",
+  "description": "Documentation for Caesar, the all-in-one Discord bot for security, moderation, economy and community features.",
   "colors": {
     "primary": "#315F9A",
     "light": "#6F9FD8",
     "dark": "#15335B"
   },
   "favicon": "favicon.png",
+  "logo": "favicon.png",
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
   "navigation": {
     "groups": [
       {
         "group": "Overview",
+        "icon": "compass",
         "pages": ["overview/introduction"]
       },
       {
         "group": "Security and Moderation",
+        "icon": "shield-halved",
         "pages": [
           "security/antinuke",
           "security/antiraid",
@@ -24,6 +32,7 @@
       },
       {
         "group": "Server Features",
+        "icon": "gear",
         "pages": [
           "configuration/admin",
           "configuration/roles/reaction",
@@ -36,6 +45,7 @@
       },
       {
         "group": "Economy and Community",
+        "icon": "coins",
         "pages": [
           "economy/overview",
           "economy/earning",
@@ -51,25 +61,20 @@
       },
       {
         "group": "Nordicalls Dashboard",
+        "icon": "gauge",
         "pages": ["dashboard/overview"]
       },
       {
         "group": "Resources",
+        "icon": "book",
         "pages": ["resources/syntax", "resources/permissions", "resources/tts"]
       },
       {
         "group": "Troubleshooting",
+        "icon": "wrench",
         "pages": ["common-issues/permissions", "common-issues/server-removal"]
       }
     ]
-  },
-  "logo": {
-    "light": "favicon.png",
-    "dark": "favicon.png"
-  },
-  "appearance": {
-    "default": "dark",
-    "strict": true
   },
   "navbar": {
     "primary": {
@@ -77,6 +82,14 @@
       "label": "Nordicalls",
       "href": "https://discord.gg/nordicalls"
     }
+  },
+  "search": {
+    "prompt": "Search Caesar docs..."
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": true
   },
   "seo": {
     "metatags": {
