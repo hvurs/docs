@@ -42,4 +42,18 @@ The **Users** view is for staff review. Search with a Discord ID or mention, Rob
 
 Admins can review and manage applications, manage moderators, and use the Caesar dashboard tools when the owner has enabled API access for them. The owner manages dashboard admins and controls that API access.
 
+## Caesar tools
+
+The **Caesar** dashboard tools are available to the owner and admins granted Caesar API access.
+
+### Bot blacklist
+
+Add or remove a Discord account by ID or mention. A blacklisted account cannot use Caesar commands or interactions, enter giveaways, or access the dashboard. They can still use Caesar's ticket system in Discord.
+
+### YouTube announcements
+
+Configure automatic announcements for the latest videos from a YouTube channel in the dashboard; there is no separate YouTube slash command. Set the source to a channel ID, `@handle`, or channel URL; choose a Discord destination; and select a check interval from 5 minutes to 24 hours. The message template must include `{url}` and can also use `{title}`. Mentions in the template will not ping.
+
+When first enabled, Caesar posts the channel's current latest video, then announces each new upload once. The settings page shows the last check, last posted video, and any recent error. Disable the automation there to stop announcements.
+
 If a page is missing, your dashboard role may not include it. Ask a Nordicalls dashboard owner or admin to review your access.

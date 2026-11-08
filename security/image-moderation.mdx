@@ -1,0 +1,32 @@
+---
+title: Image Moderation
+description: "Configure Caesar's server-wide image and animated media blacklist."
+icon: images
+---
+
+Image moderation compares media against a hash list scoped to each server. It scans every channel in the server, not just a configured channel, and can moderate matching image attachments, image embeds, GIFs, and raster stickers.
+
+## Permissions
+
+Members with **Manage Server** can configure image moderation and manage the server's hash list. Uploading media also requires **Manage Server**, unless the member has a role allowed with `/imagemod upload-role`.
+
+The **Blacklist Media** message context action is restricted to Discord **Administrators**. Right-click a message, choose **Apps > Blacklist Media**, and Caesar adds hashes for supported media in that message.
+
+## Commands
+
+| Command | Purpose |
+| --- | --- |
+| `/imagemod view` | View the current enabled state, punishment, uploader roles, and hash count. |
+| `/imagemod enable` / `/imagemod disable` | Turn automatic image moderation on or off. |
+| `/imagemod upload media:<file>` | Add an image, GIF, or short MP4/WebM video up to 20 MB. An optional note is staff context. |
+| `/imagemod list page:<number>` | Browse the paginated blacklist with image previews and hash prefixes. |
+| `/imagemod remove hash:<prefix>` | Remove one hash by a prefix of at least four characters. Use a longer prefix if it is ambiguous. |
+| `/imagemod remove-all confirm:true` | Clear all image hashes for the current server. |
+| `/imagemod punishment action:<delete\|warn\|timeout>` | Choose deletion only, a Caesar warning, or a timeout. Set `timeout_minutes` for the timeout duration. |
+| `/imagemod upload-role action:<add\|remove> role:<role>` | Allow or remove a role that can upload media. |
+
+When media matches, Caesar deletes it and applies the configured warning or timeout when selected. Successful deletions are announced in a component line such as `> 3 images sent by @user were deleted`; failures do not produce a channel announcement.
+
+## Media limitations
+
+MP4/WebM uploads can be up to 20 MB. Video and MP4-backed GIF frame extraction requires `ffmpeg` and `ffprobe` on the bot host (or their configured executable paths); clips longer than 30 seconds are skipped. Raster and animated raster stickers are supported; Lottie JSON stickers are not.

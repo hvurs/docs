@@ -104,6 +104,28 @@ Toggle whether a channel is included in message edit, delete, and ping logs. Req
 
 Copy recent messages or pinned messages from one channel or thread to another. Requires Discord **Manage Messages**; the bot needs access to both locations and permission to manage webhooks.
 
+## Bot access controls
+
+### `,blacklist`
+
+Configured Caesar admins can use the prefix command to block an account from bot commands, interactions, and giveaways:
+
+```text
+,blacklist add <@user|Discord ID> [reason]
+,blacklist remove <@user|Discord ID|exact username>
+,blacklist list
+```
+
+Blacklisted accounts are also denied dashboard access, but can still use the ticket system in Discord. The dashboard's **Caesar > Blacklist** page provides the same add/remove controls to admins with Caesar API access.
+
+### Automatic spam timeout
+
+Caesar times out a member for five minutes after six messages in a five-second window. This automatic timeout is not added to the member's sanction record. Caesar posts a short component message in the channel where the spam was detected.
+
+## Live logs
+
+Direct messages sent to Caesar are forwarded to the live-logs channel with the sender, time, message text, and attachment links. Restrict that channel to staff because it contains user-submitted private messages.
+
 ## Staff activity
 
 ### `/quota`

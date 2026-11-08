@@ -23,6 +23,8 @@ Role icons require the server to have Boost Level 2. Discord accepts an uploaded
 
 Custom roles are obtained from the shop or granted by staff; they do not require a server boost. Use `/br edit` to edit the custom role you own, including its name, colour, and sharing.
 
+You can remove your own custom role from the edit panel. This removes it from everyone it was shared with and does not refund a shop purchase. If staff granted you an existing server role, removing your access can leave that server role in place.
+
 ## Sharing a role
 
 The panel shows the number of people you can share with and who currently has the role. Choose a member to send them an accept-or-decline request. You can unshare it later; deleting a booster role or revoking a staff-granted custom role removes it from everyone it was shared with.
@@ -31,4 +33,4 @@ Default share limits are five people for a booster role and three for a custom r
 
 ## Staff management
 
-`/br admin` lets authorized staff look up a member, grant or revoke a staff-managed custom role, change sharing limits, delete a member's booster role, and clean up roles belonging to people who left the server. Shop-bought custom roles cannot be revoked from this panel. Staff access requires the configured `br_admin` permission; the bot also needs **Manage Roles** and a role position above the roles it manages.
+`/br admin` lets authorized staff look up a member, grant or revoke any custom role (including shop-bought roles), choose whether to delete the underlying server role, change sharing limits, delete a member's booster role, and clean up roles belonging to people who left the server. Revoking a shop-bought role does not refund its purchase. Staff access requires the configured `br_admin` permission; the bot also needs **Manage Roles** and a role position above the roles it manages.

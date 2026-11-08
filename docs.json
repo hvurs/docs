@@ -27,7 +27,8 @@
         "pages": [
           "security/antinuke",
           "security/antiraid",
-          "security/moderation"
+          "security/moderation",
+          "security/image-moderation"
         ]
       },
       {
@@ -49,6 +50,7 @@
         "pages": [
           "economy/overview",
           "economy/earning",
+          "economy/boosters",
           "economy/activities",
           "economy/items",
           "economy/organisations",
