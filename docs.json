@@ -64,7 +64,7 @@
       {
         "group": "Nordicalls Dashboard",
         "icon": "gauge",
-        "pages": ["dashboard/overview"]
+        "pages": ["dashboard/overview", "dashboard/serverai"]
       },
       {
         "group": "Resources",
