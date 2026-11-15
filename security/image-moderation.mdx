@@ -19,6 +19,7 @@ The **Blacklist Media** message context action is restricted to Discord **Admini
 | `/imagemod view` | View the current enabled state, punishment, uploader roles, and hash count. |
 | `/imagemod enable` / `/imagemod disable` | Turn automatic image moderation on or off. |
 | `/imagemod upload media:<file>` | Add an image, GIF, or short MP4/WebM video up to 20 MB. An optional note is staff context. |
+| `/imagemod import file:<file>` | Import up to 1,000 quoted 16-character dHashes or Caesar-format 64-character pHashes from a text/TypeScript attachment up to 1 MB. Existing duplicates are skipped. |
 | `/imagemod list page:<number>` | Browse the paginated blacklist with image previews and hash prefixes. |
 | `/imagemod remove hash:<prefix>` | Remove one hash by a prefix of at least four characters. Use a longer prefix if it is ambiguous. |
 | `/imagemod remove-all confirm:true` | Clear all image hashes for the current server. |
